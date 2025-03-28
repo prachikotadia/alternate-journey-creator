@@ -74,7 +74,7 @@ const universeData = [
 
 const Explore = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [categoryFilter, setCategoryFilter] = useState("");
+  const [categoryFilter, setCategoryFilter] = useState("all");
   
   const filteredUniverses = universeData.filter((universe) => {
     // Apply search filter
@@ -85,7 +85,7 @@ const Explore = () => {
       universe.location.toLowerCase().includes(searchTerm.toLowerCase());
     
     // Apply category filter
-    const matchesCategory = categoryFilter === "" || universe.personality === categoryFilter;
+    const matchesCategory = categoryFilter === "all" || universe.personality === categoryFilter;
     
     return matchesSearch && matchesCategory;
   });
@@ -123,7 +123,7 @@ const Explore = () => {
                       </div>
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="">All Personalities</SelectItem>
+                      <SelectItem value="all">All Personalities</SelectItem>
                       <SelectItem value="Creative">Creative</SelectItem>
                       <SelectItem value="Visionary">Visionary</SelectItem>
                       <SelectItem value="Adventurous">Adventurous</SelectItem>
@@ -154,7 +154,7 @@ const Explore = () => {
                 <Button
                   onClick={() => {
                     setSearchTerm("");
-                    setCategoryFilter("");
+                    setCategoryFilter("all");
                   }}
                 >
                   Reset Filters
