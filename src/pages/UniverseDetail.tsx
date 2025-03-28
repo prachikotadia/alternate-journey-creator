@@ -1,4 +1,3 @@
-
 import React from "react";
 import { useParams } from "react-router-dom";
 import Header from "@/components/Header";
@@ -11,7 +10,6 @@ import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Calendar, Download, Share, Star, ArrowLeft, MessageCircle, Heart, User, MapPin, Briefcase, GraduationCap, Clock } from "lucide-react";
 
-// Mock data for the universe detail page
 const universeData = {
   "1": {
     title: "The Artistic Path",
@@ -36,55 +34,55 @@ Your decision to follow your passion not only led to professional success but al
         date: "2010",
         title: "Moved to Paris",
         description: "Took the leap and moved to Paris with just a few hundred dollars and art supplies.",
-        type: "location",
+        type: "location" as "location" | "career" | "education" | "relationship" | "achievement",
       },
       {
         id: "t2",
         date: "2010-2013",
         title: "The Struggle Period",
         description: "Worked at Café Montmartre while developing your artistic style at night.",
-        type: "career",
+        type: "career" as "location" | "career" | "education" | "relationship" | "achievement",
       },
       {
         id: "t3",
         date: "2013",
         title: "First Gallery Exhibition",
         description: "Your breakthrough show at Galerie Lumière sold out completely.",
-        type: "achievement",
+        type: "achievement" as "location" | "career" | "education" | "relationship" | "achievement",
       },
       {
         id: "t4",
         date: "2015",
         title: "Met Sophie",
         description: "Began relationship with Sophie, a French art curator who championed your work.",
-        type: "relationship",
+        type: "relationship" as "location" | "career" | "education" | "relationship" | "achievement",
       },
       {
         id: "t5",
         date: "2017",
         title: "Museum Acquisition",
         description: "Centre Pompidou acquired your painting 'Urban Dreams' for their permanent collection.",
-        type: "achievement",
+        type: "achievement" as "location" | "career" | "education" | "relationship" | "achievement",
       },
       {
         id: "t6",
         date: "2019",
         title: "Established Studio",
         description: "Opened Studio Nouveau to create and mentor emerging artists.",
-        type: "career",
+        type: "career" as "location" | "career" | "education" | "relationship" | "achievement",
       },
       {
         id: "t7",
         date: "2023",
         title: "Retrospective Exhibition",
         description: "Major retrospective of your work toured major European cities.",
-        type: "achievement",
+        type: "achievement" as "location" | "career" | "education" | "relationship" | "achievement",
       },
     ],
     socialPosts: [
       {
         id: "s1",
-        platform: "instagram",
+        platform: "instagram" as "instagram" | "twitter" | "facebook",
         content: "First day in my new Montmartre studio! Can't believe this is actually happening. The light here is everything an artist dreams of. #ParisianArtist #NewBeginnings",
         author: {
           name: "You in Paris",
@@ -99,7 +97,7 @@ Your decision to follow your passion not only led to professional success but al
       },
       {
         id: "s2",
-        platform: "twitter",
+        platform: "twitter" as "instagram" | "twitter" | "facebook",
         content: "Just sold my first painting at Galerie Lumière! The journey from serving coffee to seeing my art on gallery walls has been surreal. Grateful for everyone who believed in me.",
         author: {
           name: "You in Paris",
@@ -113,7 +111,7 @@ Your decision to follow your passion not only led to professional success but al
       },
       {
         id: "s3",
-        platform: "facebook",
+        platform: "facebook" as "instagram" | "twitter" | "facebook",
         content: "HUGE NEWS: Centre Pompidou has acquired 'Urban Dreams' for their permanent collection! From that tiny apartment where I painted this to one of the world's premier museums. If you're reading this and doubting your creative path, please don't give up. The world needs your vision. ❤️",
         author: {
           name: "You in Paris",
@@ -159,55 +157,55 @@ The work was demanding, but the impact was profound—your technology reduced me
         date: "2012",
         title: "The Initial Prototype",
         description: "Built the first prototype of MedConnect while working your day job.",
-        type: "career",
+        type: "career" as "location" | "career" | "education" | "relationship" | "achievement",
       },
       {
         id: "t2",
         date: "2013",
         title: "Full-Time Commitment",
         description: "Quit your job to focus on your startup full-time.",
-        type: "career",
+        type: "career" as "location" | "career" | "education" | "relationship" | "achievement",
       },
       {
         id: "t3",
         date: "2014",
         title: "Co-Founder & Seed Funding",
         description: "Partnered with Dr. Chen and raised $2 million in seed funding.",
-        type: "achievement",
+        type: "achievement" as "location" | "career" | "education" | "relationship" | "achievement",
       },
       {
         id: "t4",
         date: "2016",
         title: "Moved to San Francisco",
         description: "Relocated the company to Silicon Valley's tech hub.",
-        type: "location",
+        type: "location" as "location" | "career" | "education" | "relationship" | "achievement",
       },
       {
         id: "t5",
         date: "2017",
         title: "Series B Funding",
         description: "Raised $45 million in Series B with $300 million valuation.",
-        type: "achievement",
+        type: "achievement" as "location" | "career" | "education" | "relationship" | "achievement",
       },
       {
         id: "t6",
         date: "2018",
         title: "Healthcare Impact Award",
         description: "MedConnect won the National Healthcare Innovation Award.",
-        type: "achievement",
+        type: "achievement" as "location" | "career" | "education" | "relationship" | "achievement",
       },
       {
         id: "t7",
         date: "2020",
         title: "Initial Public Offering",
         description: "Company went public with a $1.2 billion valuation.",
-        type: "achievement",
+        type: "achievement" as "location" | "career" | "education" | "relationship" | "achievement",
       },
     ],
     socialPosts: [
       {
         id: "s1",
-        platform: "twitter",
+        platform: "twitter" as "instagram" | "twitter" | "facebook",
         content: "Just submitted my resignation letter. Terrified and excited to go all-in on MedConnect. No safety net now! #StartupLife #TakingTheLeap",
         author: {
           name: "You the Founder",
@@ -221,7 +219,7 @@ The work was demanding, but the impact was profound—your technology reduced me
       },
       {
         id: "s2",
-        platform: "instagram",
+        platform: "instagram" as "instagram" | "twitter" | "facebook",
         content: "Our first REAL office! No more working from my apartment. Still can't afford furniture though... 😂 #StartupLife #MedConnect",
         author: {
           name: "You the Founder",
@@ -236,7 +234,7 @@ The work was demanding, but the impact was profound—your technology reduced me
       },
       {
         id: "s3",
-        platform: "facebook",
+        platform: "facebook" as "instagram" | "twitter" | "facebook",
         content: "Words can't express what today means. Standing on the NYSE trading floor watching MedConnect go public has been surreal. From coding in my apartment to a $1.2B IPO in 7 years. But the most meaningful moment was getting this message from Dr. Ramirez at Chicago General: 'Your platform helped us save a child's life tonight. The team coordination it enabled made all the difference.' THAT is why we built this company. Thank you to everyone who believed in us, even when I barely believed in myself.",
         author: {
           name: "You the Founder",
